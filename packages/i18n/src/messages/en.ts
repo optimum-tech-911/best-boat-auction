@@ -1,8 +1,10 @@
 import { brandName } from "../brand";
+import { enAssistance } from "./assistance";
 import type { Messages } from "./fr";
 
 /** English messages. Native review is pending. */
 export const en: Messages = {
+  assistance: enAssistance,
   meta: {
     siteName: brandName,
     title: `${brandName} — Boat auctions in Europe`,

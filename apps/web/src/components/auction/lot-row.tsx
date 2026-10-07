@@ -8,6 +8,7 @@ import { useLotState, useViewerPosition } from "@/features/live/live-auction";
 import { LotPhoto } from "./lot-photo";
 import { outcomeStatus, priceLabel, viewerStatus, type AuctionMessages } from "./messages";
 import { WatchButton } from "./watch-button";
+import { ExpertiseActions } from "@/features/expertise/boat-assistance";
 
 interface LotRowProps {
   lot: LotSummary;
@@ -39,6 +40,7 @@ export function LotRow({ lot, locale, messages }: LotRowProps) {
         <p className="truncate type-body-s text-stone-600">
           {interpolate(messages.lot.lotNumber, { number: lot.number })} · {lot.yearBuilt} · {formatLength(lot.lengthCm, locale)} · {lot.location.city}
         </p>
+        <div className="mt-3"><ExpertiseActions lotId={lot.id} title={lot.title} compact /></div>
       </div>
       <WatchButton lotId={lot.id} title={lot.title} labels={messages.lot} className="relative z-raised col-start-3 row-start-1 border border-stone-300 md:order-last" />
       <div className="col-span-2 col-start-2 flex flex-wrap items-baseline gap-x-6 gap-y-1 md:contents">

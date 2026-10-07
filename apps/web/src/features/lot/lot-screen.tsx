@@ -27,6 +27,7 @@ import { bidMessages } from "@/features/bidding/bid-messages";
 import { MobileBidBar } from "@/features/bidding/mobile-bid-bar";
 import { getRequestContext } from "@/lib/backend";
 import { LotActions } from "./lot-actions";
+import { ExpertiseActions } from "@/features/expertise/boat-assistance";
 import { SectionNav } from "@/components/layout/section-nav";
 import { serviceTopics } from "@/features/services/services-screen";
 import { AskQuestion } from "./ask-question";
@@ -117,6 +118,7 @@ export async function LotScreen({ locale, messages, lot }: { locale: Locale; mes
         <div className="mt-8 lg:grid lg:grid-cols-12 lg:gap-8">
           <div className="min-w-0 lg:col-span-8">
             <p className="mb-3 type-caption text-stone-600">{messages.demo.caption}</p>
+            <div className="mb-4"><ExpertiseActions lotId={lot.id} title={lot.title} /></div>
             <LotGallery images={lot.gallery} title={lot.title} locale={locale} messages={copy.gallery} placeholder={messages.common.photoComing} />
 
             <div className="mt-8 lg:hidden">

@@ -23,4 +23,5 @@ export {
   type JourneyStep,
 } from "./diagrams/diagrams";
 export { Carousel } from "./components/carousel";
+export { ExpertiseButtons } from "./components/expertise-buttons";
 export { LiveRows } from "./components/live-rows";

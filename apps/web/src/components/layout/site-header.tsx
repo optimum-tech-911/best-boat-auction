@@ -7,6 +7,7 @@ import { Heart, Menu, Search, X } from "lucide-react";
 import { href, matchRoute, plural, type Locale, type Messages, type RouteName } from "@bba/i18n";
 import { BrandLogo, Button, buttonClasses, ButtonContent, cx, Dialog, Field, Icon, TextInput } from "@bba/ui";
 import { useAuthDialog } from "@/features/account/auth-dialog";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 import { useViewer, useWatchlist } from "@/features/live/live-auction";
 import { LanguageSwitch } from "./language-switch";
 
@@ -86,9 +87,9 @@ export function SiteHeader({ locale, messages }: { locale: Locale; messages: Hea
             <Suspense><LanguageSwitch locale={locale} labelTemplate={a11y.currentLanguage} /></Suspense>
           </div>
           <div className="hidden xl:block">{account}</div>
-          <Link href={href(locale, "sell")} className={buttonClasses({ variant: "primary", size: "md", className: "ml-3 hidden lg:inline-flex" })}>
+          <SellDiscoveryLink href={href(locale, "sell")} className={buttonClasses({ variant: "primary", size: "md", className: "ml-3 hidden lg:inline-flex" })}>
             <ButtonContent>{nav.sell}</ButtonContent>
-          </Link>
+          </SellDiscoveryLink>
           <button type="button" onClick={() => setMenuPath(pathname)} aria-label={a11y.openMenu} aria-expanded={menuOpen} className="grid size-control-md place-items-center rounded-sm text-navy-900 hover:bg-stone-100 xl:hidden">
             <Icon icon={Menu} size="l" />
           </button>
@@ -148,9 +149,9 @@ function MobileMenu({ locale, messages, links, account, onClose }: MobileMenuPro
         </div>
       </nav>
       <div className="page-container pb-8">
-        <Link href={href(locale, "sell")} className={buttonClasses({ variant: "primary", size: "lg", fullWidth: true })}>
+        <SellDiscoveryLink href={href(locale, "sell")} onClick={onClose} className={buttonClasses({ variant: "primary", size: "lg", fullWidth: true })}>
           <ButtonContent size="lg">{nav.sell}</ButtonContent>
-        </Link>
+        </SellDiscoveryLink>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { href, interpolate, type Locale, type Messages, type RouteName } from "@bba/i18n";
 import { BrandLogo } from "@bba/ui";
 import { NewsletterForm } from "@/features/engagement/newsletter-form";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 import { ruleParams } from "@/lib/rule-params";
 import { LanguageSwitch } from "./language-switch";
 
@@ -50,13 +51,16 @@ export function SiteFooter({ locale, messages, year }: { locale: Locale; message
             <div key={column.title}>
               <p className="type-eyebrow text-mist-300">{footer.columns[column.title]}</p>
               <ul className="mt-4 flex flex-col gap-3">
-                {column.links.map((link) => (
+                {column.links.map((link) => {
+                  const Control = link.label === "sell" ? SellDiscoveryLink : Link;
+                  return (
                   <li key={link.label}>
-                    <Link href={`${href(locale, link.route)}${link.hash ? `#${link.hash}` : ""}`} className="type-body-m text-ivory-100 hover:underline underline-offset-4">
+                    <Control href={`${href(locale, link.route)}${link.hash ? `#${link.hash}` : ""}`} className="type-body-m text-ivory-100 hover:underline underline-offset-4">
                       {footer.links[link.label]}
-                    </Link>
+                    </Control>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             </div>
           ))}

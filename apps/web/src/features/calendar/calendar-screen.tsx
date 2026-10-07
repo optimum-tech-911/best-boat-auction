@@ -4,6 +4,7 @@ import { formatDay, formatSaleName, formatTime, formatYear, href, interpolate, p
 import { buttonClasses, ButtonContent, Reveal, SaleJourneyDiagram, SectionHeader, StatusLine, Table, TableBody, TableCell, TableHead, TableHeader, TableRow, type StatusTone } from "@bba/ui";
 import { saleDates } from "./sale-dates";
 import { ruleParams } from "@/lib/rule-params";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 
 interface CalendarScreenProps {
   locale: Locale;
@@ -21,7 +22,7 @@ interface SaleRow {
   opens: string;
   closing: string;
   status: { tone: StatusTone; label: string };
-  action: { label: string; href: string } | null;
+  action: { label: string; href: string; sell?: boolean } | null;
 }
 
 /** CAL: the next sales as C-17 rows (cards under 768 px), with the coming one and its SC-01 mini first. */
@@ -45,7 +46,7 @@ export function CalendarScreen({ locale, messages, sales, now }: CalendarScreenP
       : sale.phase !== "upcoming"
         ? { label: copy.actions.lots, href: href(locale, "auctions") }
         : sale.submissionDeadlineAt > now
-          ? { label: copy.actions.sell, href: href(locale, "sell") }
+          ? { label: copy.actions.sell, href: href(locale, "sell"), sell: true }
           : null,
   }));
   const next = rows.find((row) => row.sale.phase !== "closed");
@@ -72,9 +73,7 @@ export function CalendarScreen({ locale, messages, sales, now }: CalendarScreenP
                 <Fact term={copy.columns.closing} value={row.closing} />
               </dl>
               {row.action && (
-                <Link href={row.action.href} className={buttonClasses({ variant: "link", className: "mt-2" })}>
-                  <ButtonContent arrow>{row.action.label}</ButtonContent>
-                </Link>
+                <SaleAction action={row.action} variant="link" className="mt-2" />
               )}
             </li>
           ))}
@@ -105,9 +104,7 @@ export function CalendarScreen({ locale, messages, sales, now }: CalendarScreenP
                   <TableCell><StatusLine tone={row.status.tone}>{row.status.label}</StatusLine></TableCell>
                   <TableCell className="text-right">
                     {row.action && (
-                      <Link href={row.action.href} className={buttonClasses({ variant: "link" })}>
-                        <ButtonContent arrow>{row.action.label}</ButtonContent>
-                      </Link>
+                      <SaleAction action={row.action} variant="link" />
                     )}
                   </TableCell>
                 </TableRow>
@@ -145,9 +142,7 @@ function NextSale({ locale, messages, row }: { locale: Locale; messages: Message
             {row.sale.lotCount > 0 && <span className="type-body-s numerals text-stone-600">{plural(locale, copy.lots, row.sale.lotCount, { count: row.sale.lotCount })}</span>}
           </div>
           {row.action && (
-            <Link href={row.action.href} className={buttonClasses({ variant: "primary", className: "mt-6" })}>
-              <ButtonContent arrow>{row.action.label}</ButtonContent>
-            </Link>
+            <SaleAction action={row.action} variant="primary" className="mt-6" />
           )}
         </div>
         <Reveal kind="diagram" className="lg:col-span-8 lg:pt-8">
@@ -156,4 +151,9 @@ function NextSale({ locale, messages, row }: { locale: Locale; messages: Message
       </div>
     </section>
   );
+}
+
+function SaleAction({ action, variant, className }: { action: NonNullable<SaleRow["action"]>; variant: "primary" | "link"; className?: string }) {
+  const ActionLink = action.sell ? SellDiscoveryLink : Link;
+  return <ActionLink href={action.href} className={buttonClasses({ variant, className })}><ButtonContent arrow>{action.label}</ButtonContent></ActionLink>;
 }

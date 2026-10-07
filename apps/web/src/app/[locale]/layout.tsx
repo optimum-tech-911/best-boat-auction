@@ -11,6 +11,8 @@ import { SiteHeader } from "@/components/layout/site-header";
 import { AuthDialogProvider } from "@/features/account/auth-dialog";
 import { LiveAuctionProvider } from "@/features/live/live-auction";
 import { LiveNotifications } from "@/features/live/live-notifications";
+import { SellerDiscoveryProvider } from "@/features/seller/seller-discovery";
+import { BoatAssistanceProvider } from "@/features/expertise/boat-assistance";
 import { getRequestContext } from "@/lib/backend";
 import "../globals.css";
 import "@bba/ui/motion.css";
@@ -82,13 +84,17 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           <LiveAuctionProvider serverNow={now} viewer={viewer}>
             <ToastProvider dismissLabel={messages.notifications.dismiss}>
               <AuthDialogProvider messages={{ auth: messages.auth, common: messages.common }}>
-                <DemoBar messages={{ demo: messages.demo, common: messages.common }} scenario={scenario} />
-                <SiteHeader locale={locale} messages={{ nav: messages.nav, a11y: messages.a11y, common: messages.common }} />
-                <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
-                <SiteFooter locale={locale} messages={messages} year={new Date(now).getUTCFullYear()} />
-                <div className="h-bar-mobile lg:hidden" aria-hidden="true" />
-                <MobileSellBar locale={locale} label={messages.nav.sell} />
-                <LiveNotifications locale={locale} messages={messages.notifications} />
+                <SellerDiscoveryProvider locale={locale} messages={{ assistance: messages.assistance, categories: messages.categories, common: messages.common }}>
+                  <BoatAssistanceProvider copy={messages.assistance.expertise} closeLabel={messages.common.close}>
+                    <DemoBar messages={{ demo: messages.demo, common: messages.common }} scenario={scenario} />
+                    <SiteHeader locale={locale} messages={{ nav: messages.nav, a11y: messages.a11y, common: messages.common }} />
+                    <main id="main-content" tabIndex={-1} className="flex-1 focus:outline-none">{children}</main>
+                    <SiteFooter locale={locale} messages={messages} year={new Date(now).getUTCFullYear()} />
+                    <div className="h-bar-mobile lg:hidden" aria-hidden="true" />
+                    <MobileSellBar locale={locale} label={messages.nav.sell} />
+                    <LiveNotifications locale={locale} messages={messages.notifications} />
+                  </BoatAssistanceProvider>
+                </SellerDiscoveryProvider>
               </AuthDialogProvider>
             </ToastProvider>
           </LiveAuctionProvider>

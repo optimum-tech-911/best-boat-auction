@@ -8,6 +8,7 @@ import { useLotState, useViewerPosition } from "@/features/live/live-auction";
 import { LotPhoto } from "./lot-photo";
 import { lotSpecs, outcomeStatus, priceLabel, viewerStatus, type AuctionMessages } from "./messages";
 import { WatchButton } from "./watch-button";
+import { ExpertiseActions } from "@/features/expertise/boat-assistance";
 
 interface LotCardProps {
   lot: LotSummary;
@@ -36,6 +37,7 @@ export function LotCard({ lot, locale, messages, sizes, priority = false, headin
 
   return (
     <article className="motion-card relative flex h-full flex-col">
+      <div className="mb-3"><ExpertiseActions lotId={lot.id} title={lot.title} compact /></div>
       <div className="relative aspect-4/3 overflow-hidden rounded-md bg-stone-100">
         <div className="motion-card-image absolute inset-0">
           <LotPhoto image={lot.cover} locale={locale} sizes={sizes} placeholder={messages.photoComing} priority={priority} decorative />

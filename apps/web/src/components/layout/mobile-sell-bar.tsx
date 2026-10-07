@@ -1,6 +1,6 @@
 "use client";
 
-import Link from "next/link";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { href, matchRoute, type Locale } from "@bba/i18n";
@@ -41,9 +41,9 @@ export function MobileSellBar({ locale, label }: { locale: Locale; label: string
       )}
     >
       <div className="page-container">
-        <Link href={href(locale, "sell")} className={buttonClasses({ variant: "primary", size: "md", fullWidth: true })}>
+        <SellDiscoveryLink href={href(locale, "sell")} className={buttonClasses({ variant: "primary", size: "md", fullWidth: true })}>
           <ButtonContent>{label}</ButtonContent>
-        </Link>
+        </SellDiscoveryLink>
       </div>
     </div>
   );

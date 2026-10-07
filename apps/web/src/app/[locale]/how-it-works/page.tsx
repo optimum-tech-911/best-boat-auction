@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 import { notFound } from "next/navigation";
 import { getMessages, href, isLocale } from "@bba/i18n";
 import { buttonClasses, ButtonContent } from "@bba/ui";
@@ -45,9 +46,9 @@ export default async function HowItWorksPage({ params }: PageProps<"/[locale]/ho
         <Link href={href(locale, "auctions")} className={buttonClasses({ variant: "primary-inverse", size: "lg" })}>
           <ButtonContent arrow size="lg">{copy.band.auctions}</ButtonContent>
         </Link>
-        <Link href={href(locale, "sell")} className={buttonClasses({ variant: "secondary-inverse", size: "lg" })}>
+        <SellDiscoveryLink href={href(locale, "sell")} className={buttonClasses({ variant: "secondary-inverse", size: "lg" })}>
           <ButtonContent size="lg">{copy.band.sell}</ButtonContent>
-        </Link>
+        </SellDiscoveryLink>
       </CtaBand>
     </>
   );

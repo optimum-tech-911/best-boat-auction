@@ -52,6 +52,22 @@ export function Dialog({ open, onClose, title, closeLabel, size = "md", actions,
         event.preventDefault();
         onClose();
       }}
+      onKeyDown={(event) => {
+        if (event.key !== "Tab") return;
+        // Chrome can place focus on the document between native-dialog Tab cycles.
+        // Keep the first/last transition on a visible control inside the modal.
+        const controls = Array.from(event.currentTarget.querySelectorAll<HTMLElement>("a[href], button, input, select, textarea, [tabindex]:not([tabindex='-1'])"))
+          .filter((element) => !element.matches(":disabled, [hidden], [tabindex='-1']") && element.getClientRects().length > 0);
+        const first = controls[0];
+        const last = controls.at(-1);
+        if (event.shiftKey && document.activeElement === first && last) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last && first) {
+          event.preventDefault();
+          first.focus();
+        }
+      }}
     >
       <div className="motion-scrim-in absolute inset-0 bg-navy-950/60" onClick={onClose} aria-hidden="true" />
       <div

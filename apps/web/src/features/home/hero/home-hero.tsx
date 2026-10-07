@@ -5,6 +5,7 @@ import type { LotSummary, SaleSummary } from "@bba/contracts";
 import { href, type Locale, type Messages } from "@bba/i18n";
 import { buttonClasses, ButtonContent } from "@bba/ui";
 import { HeroRail } from "./hero-rail";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 import "./hero.css";
 
 /** Temporary credited photography (assets/CREDITS.md). Replace both files to change the hero; nothing else moves. */
@@ -57,9 +58,9 @@ export function HomeHero({ locale, messages, sale, lots }: HomeHeroProps) {
             <Link href={href(locale, "auctions")} className={buttonClasses({ variant: "primary-inverse", size: "lg", className: "w-full sm:w-auto" })}>
               <ButtonContent arrow size="lg">{messages.browse}</ButtonContent>
             </Link>
-            <Link href={href(locale, "sell")} className={buttonClasses({ variant: "secondary-inverse", size: "lg", className: "w-full sm:w-auto" })}>
+            <SellDiscoveryLink href={href(locale, "sell")} className={buttonClasses({ variant: "secondary-inverse", size: "lg", className: "w-full sm:w-auto" })}>
               <ButtonContent size="lg">{messages.sell}</ButtonContent>
-            </Link>
+            </SellDiscoveryLink>
           </div>
           <ul className="hero-enter hero-enter--trust mt-6 flex flex-wrap gap-x-4 gap-y-1 type-caption text-ivory-100 sm:gap-x-0">
             {messages.trust.map((item, index) => (

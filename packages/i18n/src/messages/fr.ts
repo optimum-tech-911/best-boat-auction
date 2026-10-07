@@ -4,8 +4,10 @@
  * are written in sentence case and uppercased by CSS.
  */
 import { brandName } from "../brand";
+import { frAssistance } from "./assistance";
 
 export const fr = {
+  assistance: frAssistance,
   meta: {
     siteName: brandName,
     title: `${brandName} — Ventes de bateaux aux enchères`,

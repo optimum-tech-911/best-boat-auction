@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { SellDiscoveryLink } from "@/features/seller/seller-discovery";
 import type { SaleSummary } from "@bba/contracts";
 import { href, type Locale, type Messages } from "@bba/i18n";
 import { buttonClasses, ButtonContent, cx, Reveal, SaleJourneyDiagram, SectionHeader } from "@bba/ui";
@@ -25,9 +25,9 @@ export function CalendarSection({ locale, messages, sales }: { locale: Locale; m
           );
         })}
       </ul>
-      <Link href={href(locale, "sell")} className={buttonClasses({ variant: "link", className: "mt-8" })}>
+      <SellDiscoveryLink href={href(locale, "sell")} className={buttonClasses({ variant: "link", className: "mt-8" })}>
         <ButtonContent arrow>{copy.sell}</ButtonContent>
-      </Link>
+      </SellDiscoveryLink>
     </section>
   );
 }

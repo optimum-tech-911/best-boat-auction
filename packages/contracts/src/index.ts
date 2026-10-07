@@ -1,3 +1,4 @@
+export type { SellerInterestExample } from "./seller-interest";
 export {
   boatTypes,
   catalogueSorts,

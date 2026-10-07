@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { SellDiscoveryLink } from "./seller-discovery";
 import { useEffect, useState } from "react";
 import { boatTypes, type BoatType } from "@bba/contracts";
 import { estimateHoldingCost } from "@bba/domain";
@@ -80,9 +81,9 @@ export function MiniEstimator({ locale, messages, currentYear }: { locale: Local
         <Link href={`${href(locale, "sell", {}, prefill)}#estimation`} className={buttonClasses({ variant: "primary-inverse" })}>
           <ButtonContent arrow>{messages.fullCost}</ButtonContent>
         </Link>
-        <Link href={href(locale, "sell")} className={buttonClasses({ variant: "secondary-inverse" })}>
+        <SellDiscoveryLink href={href(locale, "sell")} className={buttonClasses({ variant: "secondary-inverse" })}>
           <ButtonContent>{messages.sell}</ButtonContent>
-        </Link>
+        </SellDiscoveryLink>
       </div>
     </div>
   );
