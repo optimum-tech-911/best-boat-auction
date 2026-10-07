@@ -5,6 +5,9 @@
   "scripts": {
     "dev": "pnpm --filter @bba/web dev",
     "build": "turbo run build",
+    "build:cloudflare": "pnpm --filter @bba/web build:cloudflare",
+    "preview:cloudflare": "pnpm --filter @bba/web preview:cloudflare",
+    "deploy:cloudflare": "pnpm --filter @bba/web deploy:cloudflare",
     "start": "pnpm --filter @bba/web start",
     "lint": "turbo run lint && pnpm check:design",
     "typecheck": "turbo run typecheck",

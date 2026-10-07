@@ -1,6 +1,7 @@
 import { ImageResponse } from "next/og";
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 import { brandName, defaultLocale, getMessages, isLocale } from "@bba/i18n";
 import { colors } from "@bba/ui/tokens";
 
@@ -12,7 +13,20 @@ export const contentType = "image/png";
 export default async function OpenGraphImage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const { meta } = getMessages(isLocale(locale) ? locale : defaultLocale);
-  const artwork = await readFile(join(process.cwd(), "public/brand/wordmark.png"));
+  let assets: { fetch(request: Request): Promise<Response> } | undefined;
+  try {
+    assets = getCloudflareContext().env.ASSETS;
+  } catch {
+    // Standard Next.js dev/start has a filesystem, rather than Worker asset bindings.
+  }
+  let artwork: Buffer;
+  if (assets) {
+    const response = await assets.fetch(new Request("https://assets.local/brand/wordmark.png"));
+    if (!response.ok) throw new Error("The sharing logo could not be loaded from Worker assets.");
+    artwork = Buffer.from(await response.arrayBuffer());
+  } else {
+    artwork = await readFile(join(process.cwd(), "public/brand/wordmark.png"));
+  }
   return new ImageResponse(
     <div style={{ width: "100%", height: "100%", display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center", background: colors.ivory[100], color: colors.navy[900], borderBottom: `14px solid ${colors.navy[900]}` }}>
       {/* ImageResponse needs an inline image rather than next/image. */}

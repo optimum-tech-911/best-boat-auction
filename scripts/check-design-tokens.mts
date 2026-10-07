@@ -15,7 +15,7 @@ const root = fileURLToPath(new URL("..", import.meta.url));
 const scanned = ["apps", "packages"];
 const tokensDirectory = join("packages", "ui", "src", "tokens");
 const extensions = /\.(?:ts|tsx|js|jsx|mjs|css)$/;
-const skippedDirectories = new Set(["node_modules", ".next", ".turbo", "dist", "tests", "test-results", "playwright-report", "output", "public", "scripts"]);
+const skippedDirectories = new Set(["node_modules", ".next", ".open-next", ".wrangler", ".turbo", "dist", "tests", "test-results", "playwright-report", "output", "public", "scripts"]);
 
 /** Colour names and shades that exist in the token palette. */
 const palette: Record<string, readonly string[]> = {

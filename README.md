@@ -15,6 +15,10 @@ pnpm dev
 
 Open http://localhost:3000/fr (or `/en`). Use `pnpm`, not `npm install`, for this workspace.
 
+## Deploy to Cloudflare
+
+Use a **Workers** project with OpenNext, rather than the Vite/React Pages preset. The site has dynamic Next.js pages and a demo API; its build does not produce `dist`. Run `pnpm build:cloudflare`, then `pnpm preview:cloudflare` locally or `pnpm deploy:cloudflare` from an authenticated terminal. All original public images are preserved in the Worker asset bundle. See [the exact dashboard settings and commands](docs/CLOUDFLARE_DEPLOYMENT.md).
+
 ## Checks
 
 ```sh

@@ -1,6 +1,9 @@
 node_modules/
 .pnpm-store/
 .next/
+.open-next/
+.wrangler/
+.dev.vars*
 .turbo/
 coverage/
 playwright-report/
