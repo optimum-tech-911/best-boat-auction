@@ -1,0 +1,22 @@
+name: Frontend
+on:
+  push:
+  pull_request:
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm lint && pnpm typecheck && pnpm test && pnpm build
+      - run: pnpm --filter @bba/web exec playwright install --with-deps chromium
+      - run: pnpm test:e2e
+        env:
+          PLAYWRIGHT_CHANNEL: chromium
+      # Visual baselines are currently recorded on macOS/Chrome.
+      # Run pnpm test:visual locally for the design lock; record Linux baselines before enabling that CI gate.

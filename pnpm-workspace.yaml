@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+verifyDepsBeforeRun: false
+allowBuilds:
+  sharp: true
+  '@swc/core': true
+  unrs-resolver: true
+minimumReleaseAgeExclude:
+  - maplibre-gl@6.13.0

@@ -1,0 +1,18 @@
+{
+  "name": "@bba/i18n",
+  "version": "0.0.0",
+  "private": true,
+  "description": "French and English messages, localized routes and the formatters for money, numbers, dates and countdowns.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "5.0.3"
+  }
+}

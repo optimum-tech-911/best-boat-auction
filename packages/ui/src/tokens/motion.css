@@ -1,0 +1,106 @@
+/*
+ * The complete list of allowed animations: DESIGN_SYSTEM.md section 6 and DESIGN_V1_1.md section 3.
+ * Start states apply only once JavaScript has marked an element as waiting, so every page is
+ * readable without JavaScript. Reduced motion keeps only short opacity changes.
+ */
+
+@keyframes bba-rise { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+@keyframes bba-price-in { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+@keyframes bba-price-flash { from { background-color: var(--color-teal-50); } to { background-color: transparent; } }
+@keyframes bba-status-in { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+@keyframes bba-dialog-in { from { opacity: 0; transform: scale(0.98); } to { opacity: 1; transform: none; } }
+@keyframes bba-sheet-in { from { transform: translateY(100%); } to { transform: none; } }
+@keyframes bba-toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes bba-fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes bba-skeleton { 0%, 100% { opacity: 1; } 50% { opacity: 0.6; } }
+@keyframes bba-divider-draw { from { transform: scaleX(0); } to { transform: none; } }
+@keyframes bba-line-draw { to { stroke-dashoffset: 0; } }
+@keyframes bba-row-flash { from { background-color: var(--color-teal-50); } to { background-color: transparent; } }
+
+/* 5. Price change */
+.motion-price-in { display: inline-block; animation: bba-price-in var(--duration-panel) var(--ease-standard) both; }
+.motion-price-flash { animation: bba-price-flash var(--duration-flash) var(--ease-standard); }
+/* 6. Status change */
+.motion-status-in { animation: bba-status-in var(--duration-panel) var(--ease-standard) both; }
+/* 7. Dialog and sheet */
+.motion-dialog-in { animation: bba-dialog-in var(--duration-panel) var(--ease-standard) both; }
+.motion-sheet-in { animation: bba-sheet-in var(--duration-panel) var(--ease-standard) both; }
+.motion-scrim-in { animation: bba-fade-in var(--duration-panel) var(--ease-standard) both; }
+/* The dialog panel is a bottom sheet under 768 px and a centred dialog above. */
+.motion-dialog-panel { animation: bba-sheet-in var(--duration-panel) var(--ease-standard) both; }
+@media (min-width: 768px) { .motion-dialog-panel { animation-name: bba-dialog-in; } }
+/* 8. Toast */
+.motion-toast-in { animation: bba-toast-in var(--duration-panel) var(--ease-standard) both; }
+/* 9. Skeleton */
+.motion-skeleton { animation: bba-skeleton var(--duration-skeleton) var(--ease-standard) infinite; }
+/* M15 Live row insertion */
+.motion-row-flash { animation: bba-row-flash var(--duration-flash) var(--ease-standard); }
+
+/* 3. Card image hover and 4. arrow nudge, for fine pointers only. */
+@media (hover: hover) and (pointer: fine) {
+  .motion-card-image { transition: transform var(--duration-image) var(--ease-standard); }
+  .motion-card:hover .motion-card-image { transform: scale(1.03); }
+  .motion-arrow { transition: transform var(--duration-base) var(--ease-standard); }
+  a:hover > .motion-arrow, button:hover > .motion-arrow, .motion-card:hover .motion-arrow { transform: translateX(4px); }
+}
+
+/*
+ * 2. Section reveal: once, opacity 0 → 1 and 12 px → 0 over 450 ms, staggered by up to 4 cards.
+ * Only <Reveal> sets data-motion, from script, so without JavaScript every section stays visible.
+ */
+[data-reveal][data-motion="waiting"] { opacity: 0; transform: translateY(12px); }
+[data-reveal][data-motion="entering"] {
+  transition: opacity var(--duration-reveal) var(--ease-standard), transform var(--duration-reveal) var(--ease-standard);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* M10 Masked image reveal (editorial images). */
+[data-reveal="image"][data-motion="waiting"] { opacity: 1; clip-path: inset(6%); transform: scale(1.06); }
+[data-reveal="image"][data-motion="entering"] {
+  transition: clip-path var(--duration-editorial) var(--ease-standard), transform var(--duration-editorial) var(--ease-standard);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+/* M11 Heading rise: the whole block, with the eyebrow 120 ms earlier. */
+[data-reveal="heading"][data-motion="waiting"] { opacity: 1; transform: none; }
+[data-reveal="heading"][data-motion="waiting"] > * { opacity: 0; transform: translateY(24px); }
+[data-reveal="heading"][data-motion="entering"] > * {
+  transition: opacity var(--duration-heading) var(--ease-standard), transform var(--duration-heading) var(--ease-standard);
+  transition-delay: 120ms;
+}
+[data-reveal="heading"][data-motion="entering"] > :first-child { transition-delay: 0ms; }
+
+/* M12 Divider draw. */
+[data-reveal="divider"][data-motion="waiting"] { opacity: 1; transform: scaleX(0); transform-origin: left; }
+[data-reveal="divider"][data-motion="entering"] { transform-origin: left; transition: transform var(--duration-divider) var(--ease-standard); }
+
+/* M16 Diagram draw: lines through stroke-dashoffset, nodes staggered by 120 ms. */
+[data-reveal="diagram"][data-motion="waiting"] { opacity: 1; transform: none; }
+[data-reveal="diagram"][data-motion="waiting"] .diagram-line { stroke-dasharray: 1; stroke-dashoffset: 1; }
+[data-reveal="diagram"][data-motion="waiting"] .diagram-node { opacity: 0; }
+[data-reveal="diagram"][data-motion="entering"] .diagram-line {
+  stroke-dasharray: 1; stroke-dashoffset: 1;
+  animation: bba-line-draw var(--duration-editorial) var(--ease-standard) forwards;
+}
+[data-reveal="diagram"][data-motion="entering"] .diagram-node {
+  animation: bba-fade-in var(--duration-heading) var(--ease-standard) both;
+  animation-delay: calc(var(--node-index, 0) * 120ms);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  [data-reveal][data-motion],
+  [data-reveal][data-motion] > *,
+  [data-reveal="diagram"][data-motion] .diagram-node {
+    clip-path: none !important;
+    transform: none !important;
+    animation: none !important;
+    transition: opacity var(--duration-fast) linear !important;
+  }
+  [data-reveal][data-motion] .diagram-line { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; animation: none !important; }
+  .motion-price-in, .motion-status-in, .motion-dialog-in, .motion-sheet-in, .motion-toast-in, .motion-dialog-panel, .motion-scrim-in {
+    animation: bba-fade-in var(--duration-fast) linear both !important;
+  }
+  .motion-price-flash, .motion-row-flash, .motion-skeleton { animation: none !important; }
+  .motion-card-image, .motion-arrow { transition: none !important; transform: none !important; }
+}

@@ -1,0 +1,6 @@
+/* H3 sticky story (DESIGN_V1_1.md section 5): from 1024 px the header and the step card stay at
+   120 px from the top while four panels of at least 70vh scroll past. */
+@media (min-width: 1024px) {
+  .story__aside { position: sticky; top: 120px; }
+  .story__step { min-height: 70vh; display: flex; align-items: center; }
+}

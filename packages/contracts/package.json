@@ -1,0 +1,20 @@
+{
+  "name": "@bba/contracts",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Typed contracts between the frontend and the backend: data shapes and service ports implemented by the demo, Supabase and Stripe adapters.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bba/domain": "workspace:*",
+    "@bba/i18n": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

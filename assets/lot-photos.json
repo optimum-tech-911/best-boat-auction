@@ -1,0 +1,365 @@
+{
+  "imported": "2026-10-07",
+  "records": [
+    {
+      "lot": 7701,
+      "public": "/images/lots/7701-solenne-38/01.webp",
+      "original": "bestboatauction boats/bavaria-cruiser-37/01-cover.jpg",
+      "sha256": "cc2440f0ce36af986d16ab8ab4b34c9cf350de54fba9596f2b2d8bf7374f1dfc",
+      "model": "Bavaria Cruiser 37",
+      "sourceWebsite": "Star Yachting",
+      "sourceUrl": "https://www.star-yachting.fr/achat-yacht-occasion/bavaria-cruiser-37-1551",
+      "copyright": "Copyright 2021 - Tous droits réservés.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 149260,
+        "webp": 64798
+      }
+    },
+    {
+      "lot": 7701,
+      "public": "/images/lots/7701-solenne-38/02.webp",
+      "original": "bestboatauction boats/bavaria-cruiser-37/02-angle.jpg",
+      "sha256": "759f11ff04622793fdec134526bfac775f01af1b1878d01933d5549e5b521464",
+      "model": "Bavaria Cruiser 37",
+      "sourceWebsite": "Star Yachting",
+      "sourceUrl": "https://www.star-yachting.fr/achat-yacht-occasion/bavaria-cruiser-37-1551",
+      "copyright": "Copyright 2021 - Tous droits réservés.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 193456,
+        "webp": 96604
+      }
+    },
+    {
+      "lot": 7701,
+      "public": "/images/lots/7701-solenne-38/03.webp",
+      "original": "bestboatauction boats/bavaria-cruiser-37/03-detail.jpg",
+      "sha256": "e9478ec5c44af3314ffe1ebc3c8e6ce3643920df3dea10851786af5eaf6877c8",
+      "model": "Bavaria Cruiser 37",
+      "sourceWebsite": "Star Yachting",
+      "sourceUrl": "https://www.star-yachting.fr/achat-yacht-occasion/bavaria-cruiser-37-1551",
+      "copyright": "Copyright 2021 - Tous droits réservés.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 189069,
+        "webp": 89398
+      }
+    },
+    {
+      "lot": 7702,
+      "public": "/images/lots/7702-kerlys-31/01.webp",
+      "original": "bestboatauction boats/hallberg-rassy-312/01-cover.jpg",
+      "sha256": "9019652b0223909bf495d864cf2891a83597d86b73bf3b547027f90e50cbf6db",
+      "model": "Hallberg-Rassy 312",
+      "sourceWebsite": "Hallberg-Rassy",
+      "sourceUrl": "https://www.hallberg-rassy.com/yachts/previous-models/hallberg-rassy-312",
+      "copyright": "© Hallberg-Rassy Varvs AB - online since 1996; no individual photo credit shown.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 252436,
+        "webp": 332256
+      }
+    },
+    {
+      "lot": 7702,
+      "public": "/images/lots/7702-kerlys-31/02.webp",
+      "original": "bestboatauction boats/hallberg-rassy-312/02-angle.jpg",
+      "sha256": "89a3837a1db3b676e5afb3440ee15ce53336f1c46ddbfd256440fdb3da6dba83",
+      "model": "Hallberg-Rassy 312",
+      "sourceWebsite": "Hallberg-Rassy",
+      "sourceUrl": "https://www.hallberg-rassy.com/yachts/previous-models/hallberg-rassy-312",
+      "copyright": "© Hallberg-Rassy Varvs AB - online since 1996; no individual photo credit shown.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 862580,
+        "webp": 936140
+      }
+    },
+    {
+      "lot": 7702,
+      "public": "/images/lots/7702-kerlys-31/03.webp",
+      "original": "bestboatauction boats/hallberg-rassy-312/03-detail.jpg",
+      "sha256": "6349c232e25c851b11e3a13b491438ae9800dd6af1dfe605f11e5d6554c7babb",
+      "model": "Hallberg-Rassy 312",
+      "sourceWebsite": "Hallberg-Rassy",
+      "sourceUrl": "https://www.hallberg-rassy.com/yachts/previous-models/hallberg-rassy-312",
+      "copyright": "© Hallberg-Rassy Varvs AB - online since 1996; no individual photo credit shown.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 138134,
+        "webp": 162144
+      }
+    },
+    {
+      "lot": 7706,
+      "public": "/images/lots/7706-pecheur-7-0/01.webp",
+      "original": "bestboatauction boats/jeanneau-merry-fisher-695/01-cover.jpg",
+      "sha256": "f09101d1f9123ef2cafe5dcfca625fa387601d5b8b0ebc91059fadd06d898e2b",
+      "model": "Jeanneau Merry Fisher 695",
+      "sourceWebsite": "Yachtall / Yachtino",
+      "sourceUrl": "https://www.yachtall.com/en/boat/jeanneau-merry-fisher-695-s312570",
+      "copyright": "© 2003 - 2026 Yachtino GmbH.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 195957,
+        "webp": 172186
+      }
+    },
+    {
+      "lot": 7706,
+      "public": "/images/lots/7706-pecheur-7-0/02.webp",
+      "original": "bestboatauction boats/jeanneau-merry-fisher-695/02-angle.jpg",
+      "sha256": "09ce83e487c28d4eb1cb081033baa7aabe3358de205148d22b7276b6b8a71e39",
+      "model": "Jeanneau Merry Fisher 695",
+      "sourceWebsite": "Yachtall / Yachtino",
+      "sourceUrl": "https://www.yachtall.com/en/boat/jeanneau-merry-fisher-695-s312570",
+      "copyright": "© 2003 - 2026 Yachtino GmbH.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 190686,
+        "webp": 171942
+      }
+    },
+    {
+      "lot": 7706,
+      "public": "/images/lots/7706-pecheur-7-0/03.webp",
+      "original": "bestboatauction boats/jeanneau-merry-fisher-695/03-detail.jpg",
+      "sha256": "9c99097e77b873ad764ed339008aa27f5b794144a651d3bdfc4204d3f2b823c5",
+      "model": "Jeanneau Merry Fisher 695",
+      "sourceWebsite": "Bateaux et Yachts / Yachtino (Marine West listing)",
+      "sourceUrl": "https://www.bateaux-et-yachts.fr/fr/jeanneau-merry-fisher-695-s306906",
+      "copyright": "© 2026 Yachtino GmbH.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 164940,
+        "webp": 126704
+      }
+    },
+    {
+      "lot": 7710,
+      "public": "/images/lots/7710-calanque-750/01.webp",
+      "original": "bestboatauction boats/zodiac-medline-7-5/01-cover.jpg",
+      "sha256": "374343f06efb306c4db951a2747c237a1d9ce4772285d9bba542adbcbdf37ff3",
+      "model": "Zodiac Medline 7.5",
+      "sourceWebsite": "Rioux Nautique",
+      "sourceUrl": "https://www.rioux-nautique.com/achat-bateaux-occasion/zodiac-medline-7-5-yamaha-f300-ncb-2022-88h",
+      "copyright": "No image-specific copyright credit or license displayed on the listing.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 733714,
+        "webp": 288146
+      }
+    },
+    {
+      "lot": 7710,
+      "public": "/images/lots/7710-calanque-750/02.webp",
+      "original": "bestboatauction boats/zodiac-medline-7-5/02-angle.jpg",
+      "sha256": "400efa0d0a8f45fec8809d76ce2415b0a23960c3b75e3869644c9c73d63ec56b",
+      "model": "Zodiac Medline 7.5",
+      "sourceWebsite": "Rioux Nautique",
+      "sourceUrl": "https://www.rioux-nautique.com/achat-bateaux-occasion/zodiac-medline-7-5-yamaha-f300-ncb-2022-88h",
+      "copyright": "No image-specific copyright credit or license displayed on the listing.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 671199,
+        "webp": 235488
+      }
+    },
+    {
+      "lot": 7710,
+      "public": "/images/lots/7710-calanque-750/03.webp",
+      "original": "bestboatauction boats/zodiac-medline-7-5/03-detail.jpg",
+      "sha256": "43332355bf2b8c4b84ab120f6729b214c29a4faaeffc38e29c2828257b38a460",
+      "model": "Zodiac Medline 7.5",
+      "sourceWebsite": "Rioux Nautique",
+      "sourceUrl": "https://www.rioux-nautique.com/achat-bateaux-occasion/zodiac-medline-7-5-yamaha-f300-ncb-2022-88h",
+      "copyright": "No image-specific copyright credit or license displayed on the listing.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 949292,
+        "webp": 370546
+      }
+    },
+    {
+      "lot": 7712,
+      "public": "/images/lots/7712-alize-40/01.webp",
+      "original": "bestboatauction boats/lagoon-380/01-cover.jpg",
+      "sha256": "14ab8a705f64738be42c3ca7788d8b67aca532b5334f1a6bec710d915f929461",
+      "model": "Lagoon 380",
+      "sourceWebsite": "CatamaranSite / YachtSite",
+      "sourceUrl": "https://www.catamaransite.com/yachts-for-sale/lagoon-380-108/",
+      "copyright": "© 2009–2026 YachtSite All Rights Reserved.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 147040,
+        "webp": 115114
+      }
+    },
+    {
+      "lot": 7712,
+      "public": "/images/lots/7712-alize-40/02.webp",
+      "original": "bestboatauction boats/lagoon-380/02-angle.jpg",
+      "sha256": "591c4d09e196b05daee1e2de4b6b227e9f6e5e955d504e7186809a2fe48a3930",
+      "model": "Lagoon 380",
+      "sourceWebsite": "CatamaranSite / YachtSite",
+      "sourceUrl": "https://www.catamaransite.com/yachts-for-sale/lagoon-380-108/",
+      "copyright": "© 2009–2026 YachtSite All Rights Reserved.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 704510,
+        "webp": 647682
+      }
+    },
+    {
+      "lot": 7712,
+      "public": "/images/lots/7712-alize-40/03.webp",
+      "original": "bestboatauction boats/lagoon-380/03-detail.jpg",
+      "sha256": "9bd83558968f7f8d0371499d9e8dbbb5680376331a4ee67033b8d0beff7aedd7",
+      "model": "Lagoon 380",
+      "sourceWebsite": "CatamaranSite / YachtSite",
+      "sourceUrl": "https://www.catamaransite.com/yachts-for-sale/lagoon-380-108/",
+      "copyright": "© 2009–2026 YachtSite All Rights Reserved.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 309575,
+        "webp": 215480
+      }
+    },
+    {
+      "lot": 7601,
+      "public": "/images/lots/7601-brisane-21/01.webp",
+      "original": "bestboatauction boats/etap-21i/01-cover.jpg",
+      "sha256": "e9d630523ef2a68179c524bc68ce70123daefa24b7badad34f5f66eda2c05c4a",
+      "model": "Etap 21i",
+      "sourceWebsite": "Burton Waters Boat Sales",
+      "sourceUrl": "https://www.burtonwaters.co.uk/boats/etap-21i-10080903/",
+      "copyright": "© Copyright 2026 Burton Waters Marina Ltd.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 5163373,
+        "webp": 616460
+      }
+    },
+    {
+      "lot": 7601,
+      "public": "/images/lots/7601-brisane-21/02.webp",
+      "original": "bestboatauction boats/etap-21i/02-angle.jpg",
+      "sha256": "338547b6a35c54f6ba9960eede1c2cb18aad109459007b982466b95928fe6b6b",
+      "model": "Etap 21i",
+      "sourceWebsite": "Burton Waters Boat Sales",
+      "sourceUrl": "https://www.burtonwaters.co.uk/boats/etap-21i-10080903/",
+      "copyright": "© Copyright 2026 Burton Waters Marina Ltd.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 435799,
+        "webp": 311988
+      }
+    },
+    {
+      "lot": 7601,
+      "public": "/images/lots/7601-brisane-21/03.webp",
+      "original": "bestboatauction boats/etap-21i/03-detail.jpg",
+      "sha256": "63ef0ba8221710e98b3a82a6dd3fc1116cfb745e660d82f1ceb638a5992c9d79",
+      "model": "Etap 21i",
+      "sourceWebsite": "Burton Waters Boat Sales",
+      "sourceUrl": "https://www.burtonwaters.co.uk/boats/etap-21i-10080903/",
+      "copyright": "© Copyright 2026 Burton Waters Marina Ltd.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 1042293,
+        "webp": 285706
+      }
+    },
+    {
+      "lot": 7605,
+      "public": "/images/lots/7605-noordmeer-6-7/01.webp",
+      "original": "bestboatauction boats/interboat-22-classic/01-cover.jpg",
+      "sha256": "9fc16c79d1df064755e4fd5a2e11a49ea8f61dfb17a2d6c5ab421da866392598",
+      "model": "Interboat 22 Classic",
+      "sourceWebsite": "Interboat",
+      "sourceUrl": "https://www.interboat.com/interboat-22-2006-classic1727956703",
+      "copyright": "2026, All rights reserved.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 1063158,
+        "webp": 427000
+      }
+    },
+    {
+      "lot": 7605,
+      "public": "/images/lots/7605-noordmeer-6-7/02.webp",
+      "original": "bestboatauction boats/interboat-22-classic/02-angle.jpg",
+      "sha256": "f123db8f2528e748728c45bb49adc5311304d73af72ad8bc0e6e15df79d4c7d5",
+      "model": "Interboat 22 Classic",
+      "sourceWebsite": "Interboat",
+      "sourceUrl": "https://www.interboat.com/interboat-22-2006-classic1727956703",
+      "copyright": "2026, All rights reserved.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 1284473,
+        "webp": 540740
+      }
+    },
+    {
+      "lot": 7605,
+      "public": "/images/lots/7605-noordmeer-6-7/03.webp",
+      "original": "bestboatauction boats/interboat-22-classic/03-detail.jpg",
+      "sha256": "319b3d44a281f3ccaa8e40f42cc7ffe93a7f11bda48d467542390c3946a8c0b5",
+      "model": "Interboat 22 Classic",
+      "sourceWebsite": "Interboat",
+      "sourceUrl": "https://www.interboat.com/interboat-22-2006-classic1727956703",
+      "copyright": "2026, All rights reserved.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 1287629,
+        "webp": 546764
+      }
+    },
+    {
+      "lot": 7610,
+      "public": "/images/lots/7610-rumbelo-450/01.webp",
+      "original": "bestboatauction boats/terhi-450/01-cover.jpg",
+      "sha256": "4204e449858ab37d044f1fcc32ad8e6505fc21ef9488b700a792b22aefd7f668",
+      "model": "Terhi 450",
+      "sourceWebsite": "Terhi / TerhiTec",
+      "sourceUrl": "https://terhi.fi/en/modelrange/terhi-450/",
+      "copyright": "© Copyright, Terhi 2026.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 194529,
+        "webp": 192976
+      }
+    },
+    {
+      "lot": 7610,
+      "public": "/images/lots/7610-rumbelo-450/02.webp",
+      "original": "bestboatauction boats/terhi-450/02-angle.jpg",
+      "sha256": "bcd3e7e4b052d922093225893e62fc0714a862e8963bc7c4f95bd52144a0eeef",
+      "model": "Terhi 450",
+      "sourceWebsite": "Terhi / TerhiTec",
+      "sourceUrl": "https://terhi.fi/en/modelrange/terhi-450/",
+      "copyright": "© Copyright, Terhi 2026.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 148464,
+        "webp": 135362
+      }
+    },
+    {
+      "lot": 7610,
+      "public": "/images/lots/7610-rumbelo-450/03.webp",
+      "original": "bestboatauction boats/terhi-450/03-detail.jpg",
+      "sha256": "a17cd95ef83612210adbc22a04b53f5a46ad0bfa467ff9a427906a64ba67f8af",
+      "model": "Terhi 450",
+      "sourceWebsite": "Terhi / TerhiTec",
+      "sourceUrl": "https://terhi.fi/en/modelrange/terhi-450/",
+      "copyright": "© Copyright, Terhi 2026.",
+      "licence": "No explicit reuse license displayed; copyright remains with the rights holder.",
+      "bytes": {
+        "original": 175273,
+        "webp": 167812
+      }
+    }
+  ]
+}

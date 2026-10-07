@@ -1,0 +1,14 @@
+{
+  "extends": "../config/tsconfig.library.json",
+  "compilerOptions": {
+    "lib": [
+      "es2022",
+      "dom"
+    ],
+    "types": []
+  },
+  "include": [
+    "src",
+    "tests"
+  ]
+}

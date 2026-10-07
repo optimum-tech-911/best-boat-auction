@@ -1,0 +1,57 @@
+/*
+ * H1 hero (docs/design/HERO_BRIEF.md, aligned by task D1.1). The composition is locked:
+ * full-width photograph about 740–820 px high on desktop with the boat to the right and the
+ * text on the left; on mobile about 90svh, the photograph above and the text below.
+ */
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  min-height: max(700px, 90svh);
+  overflow: hidden;
+  background: var(--color-navy-950);
+  color: var(--color-ivory-100);
+}
+.hero__media { position: absolute; inset: 0; z-index: -1; overflow: hidden; }
+.hero__media picture { display: block; width: 100%; height: clamp(280px, 38svh, 360px); mask-image: linear-gradient(var(--color-navy-950) 72%, transparent 100%); }
+.hero__image { display: block; width: 100%; height: 100%; object-fit: cover; object-position: 50% 78%; }
+.hero__shade { position: absolute; inset: 0; background-image: var(--overlay-hero-mobile); }
+.hero__main { flex: 1; display: flex; align-items: flex-end; padding-top: clamp(210px, 29svh, 290px); padding-bottom: 32px; }
+.hero__content { width: 100%; max-width: 540px; }
+
+@media (min-width: 768px) {
+  .hero { min-height: 740px; height: clamp(740px, 82vh, 820px); }
+  .hero__media picture { height: 100%; mask-image: none; }
+  .hero__image { object-position: center 56%; animation: hero-photo-settle var(--duration-hero) var(--ease-standard) both; }
+  .hero__shade { background-image: var(--overlay-hero); }
+  .hero__main { align-items: center; padding-block: 56px 72px; }
+  /* About 680 px in the brief; 720 px keeps the two-line heading of the approved composition at 80 px. */
+  .hero__content { max-width: 720px; }
+}
+
+/* 1. Hero entrance: the photograph settles, then the text and the rail rise in order. */
+@keyframes hero-photo-settle { from { transform: scale(1.025); } to { transform: none; } }
+@keyframes hero-rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.hero-enter { animation: hero-rise var(--duration-reveal) var(--ease-standard) both; }
+.hero-enter--eyebrow { animation-delay: 80ms; }
+.hero-enter--heading { animation-delay: 150ms; }
+.hero-enter--description { animation-delay: 240ms; }
+.hero-enter--actions { animation-delay: 300ms; }
+.hero-enter--trust { animation-delay: 340ms; }
+.hero-enter--rail { animation-delay: 350ms; }
+
+/* M17 Hero settle on scroll: CSS scroll-driven animation only, from 1024 px, never with reduced motion. */
+@media (min-width: 1024px) and (prefers-reduced-motion: no-preference) {
+  @supports (animation-timeline: view()) {
+    .hero { view-timeline-name: --hero; view-timeline-axis: block; }
+    .hero__media picture { animation: hero-scroll-settle linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+    .hero__content { animation: hero-scroll-text linear both; animation-timeline: --hero; animation-range: exit 0% exit 100%; }
+  }
+}
+@keyframes hero-scroll-settle { from { transform: none; } to { transform: scale(1.04); } }
+@keyframes hero-scroll-text { from { opacity: 1; } to { opacity: 0.7; } }
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-enter, .hero__image { animation: none; }
+}

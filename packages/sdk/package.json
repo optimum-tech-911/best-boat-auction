@@ -1,0 +1,23 @@
+{
+  "name": "@bba/sdk",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Data access for the frontend. Version 1 ships the in-memory demonstration adapter of every backend contract; the Supabase and Stripe adapters join it later.",
+  "sideEffects": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@bba/contracts": "workspace:*",
+    "@bba/domain": "workspace:*",
+    "@bba/i18n": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3",
+    "vitest": "5.0.3"
+  }
+}

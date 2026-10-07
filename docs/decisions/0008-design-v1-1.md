@@ -1,0 +1,19 @@
+# Homepage v2 and global design corrections
+
+2026-10-06. The user attached DESIGN_V1_1 and screenshots of the current presentation. The supplied text is preserved verbatim at `docs/design/DESIGN_V1_1.md`; it supersedes earlier visual decisions for its explicit changes.
+
+Apply the available G0, homepage, seller and explanatory-page directions to the frontend. Keep French as the default and English as the secondary language: the four-language menu in the imported brief conflicts with the user's earlier explicit two-language instruction. An asynchronous clarification is pending. The supplied logos, source photographs, original root prototypes and PDF remain untouched.
+
+The hero composition and original photography remain. Add desktop CSS scroll settling; exclude scroll-timeline effects from the preview replay. Update reviewed hero baselines for the fixture counts, date formats and button radii requested by G0. The regenerated `heroes/home.jpg` and sloep replacement referenced by the brief are absent; the supplied landscape sloep is shown uncropped in its category frame.
+
+Shared controls, the carousel and seven accessible SVG display diagrams live in `packages/ui`. French/English text and number/date presentation live in `packages/i18n`. The existing vessel fixtures, estimator assumptions and three calendar entries are centralized in `packages/sdk`. The estimator calculation stays explicitly within the reference frontend simulation; no production bidding, identity or payment service is created or copied from the prototype.
+
+The closing hero takes its next lot, bid and end time from the same display context as the simulated catalogue. The browser uses lossless WebP logo derivatives, with visible pixels and alpha checked against the originals. This changes asset delivery without changing the artwork or its framing.
+
+The homepage follows H1–H9: hero, closing carousel, sticky four-step story, categories, mini estimator, inspection, market, calendar and newsletter. The mini estimator transfers its three values through the seller hash route, including language changes. Search uses a native modal, languages use a keyboard-operable menu, guest notifications are hidden and statuses use text with static dots. All pages apply bounded radii and contrast corrections. Marketing image captions are removed; lot sections use one illustration/demo caption. Remove visible bailiff/notary assertions. Payment diagrams identify their unconnected demo state and pending provider.
+
+`docs/design/DESIGN_SYSTEM.md` is absent. Its twelve fictional boats, September sale seed, G2/footer definition, page blueprints and task workflow cannot be reconstructed. Retain the actual available fixtures: 15 live lots and two past results, with matched market rows. Do not show a fictitious count of twelve or fabricate six result rows. DATA-1, exact base-system conformance and D5–D11 remain deferred until the missing source is provided. Existing footer structure remains; the newsletter is an explicit simulation, with no stored address or email sent.
+
+The prototype engine still supplies the explanatory maximum-bid and fee examples. SC-04/SC-07 take display results as props; these are not implementations of `packages/domain` or claims that the specification's domain vectors have passed. Real escrow, authentication, seller intake, account portals and admin remain outside this frontend pass.
+
+Motion uses CSS and the shared `useInView` observer. Native carousel scrolling and dragging remain immediate; transactional route/card entrance effects are disabled. Diagram lines draw once; reduced motion keeps content visible. Live row insertion uses FLIP and a restrained flash, capped at six displayed rows; departing rows fade in an inert overlay without changing the list height. No animation library, scroll hijacking or autoplay is introduced.

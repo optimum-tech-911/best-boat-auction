@@ -1,0 +1,79 @@
+/* Component styles that utilities cannot express: form control pseudo-elements. */
+
+/* C-26 slider: a 4 px stone-200 track with a navy-900 fill and a 20 px white thumb with a 2 px navy-900 border. */
+.bba-slider {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 20px;
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.bba-slider::-webkit-slider-runnable-track {
+  height: 4px;
+  border-radius: var(--radius-xs);
+  background: linear-gradient(to right, var(--color-navy-900) var(--slider-fill), var(--color-stone-200) var(--slider-fill));
+}
+.bba-slider::-webkit-slider-thumb {
+  appearance: none;
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  margin-top: -8px;
+  border: 2px solid var(--color-navy-900);
+  border-radius: 9999px;
+  background: var(--color-white);
+}
+.bba-slider::-moz-range-track { height: 4px; border-radius: var(--radius-xs); background: var(--color-stone-200); }
+.bba-slider::-moz-range-progress { height: 4px; border-radius: var(--radius-xs); background: var(--color-navy-900); }
+.bba-slider::-moz-range-thumb {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--color-navy-900);
+  border-radius: 9999px;
+  background: var(--color-white);
+}
+.bba-slider:focus-visible { outline: 2px solid var(--color-teal-700); outline-offset: 4px; }
+
+/* Native dialog: the scrim is drawn by the component; the backdrop stays transparent. */
+dialog.bba-dialog::backdrop { background: transparent; }
+dialog.bba-dialog { max-width: none; max-height: none; }
+
+/* Hide the disclosure marker of summary elements used as menus and accordions. */
+summary.bba-summary { list-style: none; }
+summary.bba-summary::-webkit-details-marker { display: none; }
+
+/* M14 carousel: about 1.15 cards under 768 px, 2.3 on tablets and 3.4 from 1024 px. */
+.bba-carousel__track {
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x proximity;
+  scroll-padding-inline: 0;
+}
+.bba-carousel__track[data-dragging] { scroll-snap-type: none; cursor: grabbing; user-select: none; }
+.bba-carousel__item { flex: 0 0 calc((100% - 16px) / 1.15); min-width: 0; scroll-snap-align: start; }
+@media (min-width: 768px) {
+  .bba-carousel__track { gap: 24px; }
+  .bba-carousel__item { flex-basis: calc((100% - 2 * 24px) / 2.3); }
+}
+@media (min-width: 1024px) {
+  .bba-carousel__track { gap: 32px; }
+  .bba-carousel__item { flex-basis: calc((100% - 3 * 32px) / 3.4); }
+  .bba-carousel--more::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 18px;
+    width: 64px;
+    background-image: var(--overlay-carousel-fade);
+    pointer-events: none;
+  }
+}
+
+/* Sticky bars under the header (lot section navigation). */
+.sticky-below-header { position: sticky; top: var(--header-height); }
